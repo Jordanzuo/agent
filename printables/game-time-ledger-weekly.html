@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>游戏时间记账本（一周一页）</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+      :root {
+        --text: #111;
+        --muted: #444;
+        --line: #cfcfcf;
+        --light: #f7f7f7;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+          "Source Han Sans SC", Arial, sans-serif;
+        color: var(--text);
+        background: white;
+        line-height: 1.25;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .sheet {
+        width: calc(210mm - 24mm);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5mm;
+      }
+      .top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5mm;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 5mm;
+      }
+      h1 {
+        margin: 0 0 2mm 0;
+        font-size: 16pt;
+      }
+      .sub {
+        margin: 0;
+        color: var(--muted);
+        font-size: 10.5pt;
+      }
+      .fields {
+        display: grid;
+        grid-template-columns: 26mm 1fr 22mm 1fr;
+        gap: 3mm;
+        align-items: center;
+        margin-top: 3mm;
+      }
+      .label {
+        color: var(--muted);
+        font-size: 10.5pt;
+      }
+      .line {
+        border-bottom: 1px solid var(--line);
+        height: 7mm;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2mm;
+        margin-top: 3mm;
+      }
+      .badge {
+        border: 1px solid #e1e1e1;
+        background: var(--light);
+        border-radius: 999px;
+        padding: 1mm 3mm;
+        font-size: 10pt;
+        white-space: nowrap;
+      }
+      .rules {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4mm;
+        margin-top: 3mm;
+      }
+      .rule {
+        border-left: 3px solid #2b6cb0;
+        padding-left: 3mm;
+        font-size: 10.5pt;
+        color: var(--muted);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+        font-size: 10.5pt;
+      }
+      thead th {
+        background: var(--light);
+        border-bottom: 1px solid var(--line);
+        padding: 2mm 2mm;
+        text-align: left;
+      }
+      tbody td {
+        border-top: 1px solid var(--line);
+        padding: 2mm 2mm;
+        height: 9mm;
+        vertical-align: middle;
+      }
+      .c-time {
+        width: 22mm;
+      }
+      .c-event {
+        width: 30mm;
+      }
+      .c-delta {
+        width: 18mm;
+        text-align: right;
+      }
+      .c-bal {
+        width: 22mm;
+        text-align: right;
+      }
+      .c-debt {
+        width: 22mm;
+        text-align: right;
+      }
+      .c-note {
+        width: auto;
+      }
+      .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5mm;
+        margin-top: 2mm;
+      }
+      .mini {
+        font-size: 10.5pt;
+        color: var(--muted);
+      }
+      .checklist {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2mm;
+        margin-top: 2mm;
+        font-size: 10.5pt;
+      }
+      .box {
+        display: inline-block;
+        width: 4mm;
+        height: 4mm;
+        border: 1px solid var(--line);
+        margin-right: 2mm;
+        vertical-align: -0.5mm;
+      }
+      .print-tip {
+        margin: 0;
+        font-size: 10pt;
+        color: var(--muted);
+      }
+      @media print {
+        .print-tip {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sheet">
+      <div class="top">
+        <div class="card">
+          <h1>游戏时间记账本（一周一页）</h1>
+          <p class="sub">规则：每次余额变动就记一行。可用余额允许负数；欠款余额始终 ≥ 0。</p>
+          <p class="print-tip">打印建议：A4 纵向，缩放 100%，关闭页眉页脚。建议一次打印多份。</p>
+
+          <div class="fields">
+            <div class="label">周次</div>
+            <div class="line"></div>
+
+            <div class="label">期初可用</div>
+            <div class="line"></div>
+            <div class="label">期初欠款</div>
+            <div class="line"></div>
+
+            <div class="label">本周透支</div>
+            <div class="line"></div>
+          </div>
+
+          <div class="badges">
+            <span class="badge">每日上限：120 分钟</span>
+            <span class="badge">每日开局：最多 2 次</span>
+            <span class="badge">单次最少：20 分钟</span>
+            <span class="badge">周日：Switch Day</span>
+            <span class="badge">透支：每周 1 次 / ≤60</span>
+            <span class="badge">押金：15</span>
+            <span class="badge">利息：20%</span>
+          </div>
+
+          <div class="rules">
+            <div class="rule">
+              <b>透支三连（必写三行）</b><br />
+              1) 押金冻结 -15<br />
+              2) 欠款 +（透支×1.2）<br />
+              3) 开局 -透支分钟
+            </div>
+            <div class="rule">
+              <b>还款优先级</b><br />
+              任何获得分钟：先减欠款；欠款清零后才进可用余额。<br />
+              账单日检查：欠款是否归零 + 是否违规透支。
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h1>本周结算（周日 13:30）</h1>
+          <p class="sub">只看两件事：欠款是否为 0；本周透支是否超过一次/超过 60。</p>
+
+          <div class="checklist">
+            <div><span class="box"></span>欠款余额为 0（本周信用合格）</div>
+            <div><span class="box"></span>本周透支 ≥ 1 次</div>
+          </div>
+
+          <div style="margin-top: 4mm;">
+            <div class="mini"><b>逾期（到下个账单日仍欠款&gt;0）</b>：押金没收 + 下个周末冻结透支 1 周。</div>
+            <div class="mini" style="margin-top: 2mm;">
+              <b>信用奖励</b>：连续 4 周按时还清且无红黄线，可把利息从 20% 降到 15%（持续 4 周）。
+            </div>
+          </div>
+
+          <div style="margin-top: 6mm;">
+            <div class="fields" style="grid-template-columns: 28mm 1fr;">
+              <div class="label">本周总结一句话</div>
+              <div class="line"></div>
+              <div class="label">下周想改进的点</div>
+              <div class="line"></div>
+              <div class="label">下周目标（可选）</div>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table aria-label="ledger">
+        <thead>
+          <tr>
+            <th class="c-time">时间</th>
+            <th class="c-event">事件</th>
+            <th class="c-delta">变动</th>
+            <th class="c-bal">可用余额</th>
+            <th class="c-debt">欠款余额</th>
+            <th class="c-note">备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 22 rows fits most weekends; print multiple pages if needed -->
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+
+      <div class="footer">
+        <div class="card">
+          <div class="mini"><b>快捷事件（可手写简写）</b></div>
+          <div class="mini" style="margin-top: 2mm;">
+            获得：早+15 / 午+40 / 晚+20 / 洗碗+5 / 烘干+15 / 快递+20 / 拖地+15 / 报纸+20<br />
+            运动：跑酷+60（≤120/周）/ 自行车+120（≤180/周）/ 比赛+60 + 名次
+          </div>
+        </div>
+        <div class="card">
+          <div class="mini"><b>使用（开局先扣）</b></div>
+          <div class="mini" style="margin-top: 2mm;">
+            常用档位：-20 / -30 / -60<br />
+            玩少了：返还 +__（写一行即可）
+          </div>
+        </div>
+        <div class="card">
+          <div class="mini"><b>透支提示</b></div>
+          <div class="mini" style="margin-top: 2mm;">
+            先看：本周是否已透支（最多 1 次）<br />
+            再写：押金 -15 → 欠款 +（透支×1.2） → 开局 -透支分钟
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

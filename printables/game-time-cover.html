@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>游戏时间规则卡（封面）</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 14mm;
+      }
+      :root {
+        --text: #111;
+        --muted: #444;
+        --line: #d0d0d0;
+        --chip: #f4f6f8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+          "Source Han Sans SC", Arial, sans-serif;
+        color: var(--text);
+        background: white;
+        line-height: 1.35;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .page {
+        height: calc(297mm - 28mm);
+        width: calc(210mm - 28mm);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10mm;
+      }
+      header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8mm;
+        align-items: start;
+      }
+      .title {
+        display: flex;
+        flex-direction: column;
+        gap: 2mm;
+      }
+      h1 {
+        margin: 0;
+        font-size: 22pt;
+        letter-spacing: 0.2px;
+      }
+      .subtitle {
+        margin: 0;
+        font-size: 12pt;
+        color: var(--muted);
+      }
+      .meta {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 8mm;
+        min-width: 66mm;
+      }
+      .meta .row {
+        display: grid;
+        grid-template-columns: 26mm 1fr;
+        gap: 3mm;
+        align-items: center;
+        margin-bottom: 3mm;
+      }
+      .meta .row:last-child {
+        margin-bottom: 0;
+      }
+      .meta .label {
+        color: var(--muted);
+        font-size: 10.5pt;
+      }
+      .meta .value {
+        border-bottom: 1px solid var(--line);
+        height: 8mm;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6mm;
+        flex: 1;
+      }
+      section {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 7mm;
+        display: flex;
+        flex-direction: column;
+        gap: 4mm;
+        min-height: 0;
+      }
+      section h2 {
+        margin: 0;
+        font-size: 13.5pt;
+      }
+      .hint {
+        margin: 0;
+        color: var(--muted);
+        font-size: 10.5pt;
+      }
+      ul {
+        margin: 0;
+        padding-left: 5mm;
+      }
+      li {
+        margin: 1.5mm 0;
+        font-size: 11pt;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5mm;
+      }
+      .chip {
+        background: var(--chip);
+        border: 1px solid #e4e8ee;
+        border-radius: 999px;
+        padding: 1.5mm 3.5mm;
+        font-size: 10.5pt;
+        white-space: nowrap;
+      }
+      .rule {
+        border-left: 3px solid #2b6cb0;
+        padding-left: 4mm;
+      }
+      .big {
+        font-size: 12pt;
+      }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+      }
+      footer {
+        display: none;
+      }
+      .print-tip {
+        margin: 0;
+        font-size: 10pt;
+        color: var(--muted);
+      }
+      @media print {
+        .print-tip {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="title">
+          <h1>游戏时间规则卡（封面）</h1>
+          <p class="subtitle">
+            周末闯关系统：用任务赚分钟，用分钟买游戏。账本是存档点。
+          </p>
+          <p class="print-tip">打印建议：A4 纵向，缩放 100%，关闭页眉页脚。</p>
+        </div>
+        <div class="meta">
+          <div class="row">
+            <div class="label">玩家</div>
+            <div class="value"></div>
+          </div>
+          <div class="row">
+            <div class="label">家长</div>
+            <div class="value"></div>
+          </div>
+          <div class="row">
+            <div class="label">账单日</div>
+            <div class="value big">周日 13:30</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="grid">
+        <section>
+          <h2>任务赚分钟（Earn）</h2>
+          <p class="hint">做完立刻存档一笔（写进账本）。</p>
+          <div class="chips">
+            <span class="chip">早餐 +15</span>
+            <span class="chip">午餐 +40</span>
+            <span class="chip">晚餐 +20</span>
+            <span class="chip">洗碗机 +5</span>
+            <span class="chip">烘干机 +15</span>
+            <span class="chip">取快递 +20</span>
+            <span class="chip">拖地 +15</span>
+            <span class="chip">英文报纸 +20</span>
+          </div>
+          <div class="rule">
+            <p class="hint mono" style="margin: 0 0 2mm 0;">隐藏连击（自动生效）</p>
+            <ul>
+              <li>一天做两餐：当天三餐分钟合计 <b>+20%</b></li>
+              <li>一天做三餐：当天三餐分钟合计 <b>+50%</b></li>
+              <li class="hint">晚上补记一行：连击加成 +__</li>
+            </ul>
+          </div>
+          <div class="rule">
+            <p class="hint mono" style="margin: 0 0 2mm 0;">每周免费任务</p>
+            <ul>
+              <li>每周必须无偿读 1 篇英文文章（不奖励分钟）</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>运动加成（Buff）</h2>
+          <p class="hint">用来强化健康习惯（封顶不滚存）。</p>
+          <ul>
+            <li><b>跑酷</b>：+60/次（每周封顶 +120）</li>
+            <li><b>自行车</b>：+120/次（每周封顶 +180）</li>
+            <li>
+              <b>比赛</b>：参赛 +60；名次奖励按既定规则（4-8/+30，3/+60，2/+120，1/+240）
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>买游戏时间（Spend）</h2>
+          <p class="hint">开局前先扣分钟；玩少了可返还。</p>
+          <ul>
+            <li><b>每天最多</b> 120 分钟</li>
+            <li><b>每天最多开局</b> 2 次</li>
+            <li><b>每次至少</b> 20 分钟</li>
+            <li><b>周日 Switch Day</b>：只能 Switch，不玩手机游戏</li>
+          </ul>
+          <div class="rule">
+            <p class="hint" style="margin: 0;">
+              口诀：<b>先存档，再开玩。</b>（每次余额变动都要写一行）
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>透支模式（Credit，一周一次）</h2>
+          <p class="hint">透支是信用技能，不是日常按钮。</p>
+          <ul>
+            <li><b>每周最多透支</b> 1 次</li>
+            <li><b>最多透支</b> 60 分钟</li>
+            <li><b>押金</b>：冻结 15 分钟（按时还清退回；逾期没收）</li>
+            <li><b>利息</b>：20%（透支 \(T\) → 欠款 \(T×1.2\)）</li>
+          </ul>
+          <div class="rule">
+            <p class="hint mono" style="margin: 0 0 2mm 0;">透支存档三连（必须写满三行）</p>
+            <ol style="margin: 0; padding-left: 5mm;">
+              <li class="big">押金冻结：-15</li>
+              <li class="big">生成欠款：+（透支×1.2）</li>
+              <li class="big">本次开局：-透支分钟</li>
+            </ol>
+            <p class="hint" style="margin: 2mm 0 0 0;">
+              还款优先级：<b>先还欠款</b>，清零后才进入可用余额。
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <footer></footer>
+    </div>
+  </body>
+</html>
