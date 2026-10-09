@@ -60,7 +60,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 | 类别 | 能力 |
 |------|------|
-| **架构** | 游戏服务端框架、高并发在线服务、性能优化、稳定性建设、分布式系统（Kafka / ZooKeeper / Redis / Elasticsearch）；**NATS 节点间通信（辛克普雷）** |
+| **架构** | 游戏服务端框架、高并发在线服务、性能优化、稳定性建设、分布式系统（Kafka / NATS / ZooKeeper / Redis / Elasticsearch）；节点间通信（辛克普雷） |
 | **语言** | Golang（10 年+）、C#（10 年+）、Shell（10 年+）；Python（脚本与工具） |
 | **数据库** | MySQL（10 年+）、MongoDB、SQL Server、TiDB |
 | **缓存与消息** | Redis（10 年+）；Kafka；**NATS（辛克普雷 · 游戏各节点间通信）** |
