@@ -41,7 +41,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 - **从零设计**游戏服务端框架，长期维护基础框架与类库，多款产品共享同一套服务端能力。  
 - **从零架构**游戏支付平台、游戏发行平台，统一充值、对账、渠道对接，最多 **10 款游戏**并行运营。  
-- **主导技术演进**：Golang、Git、Docker、ZooKeeper、Kafka、Redis、Elasticsearch 选型与推广，完成向分布式、高并发在线服务的体系升级（**未使用 NATS**）。  
+- **主导技术演进**：Golang、Git、Docker、ZooKeeper、Kafka、Redis、Elasticsearch 选型与推广，完成向分布式、高并发在线服务的体系升级。  
 - 技术栈：Golang、C#（遗留与过渡）、MySQL、MongoDB、Linux；与约 50 人团队协作落地架构规范与中间件使用标准。
 
 ### 深圳力创世纪科技有限公司 · 技术总监  
@@ -60,7 +60,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 | 类别 | 能力 |
 |------|------|
-| **架构** | 游戏服务端框架、高并发在线服务、性能优化、稳定性建设、分布式系统（Kafka / ZooKeeper / Redis / Elasticsearch）；**NATS 节点间通信** |
+| **架构** | 游戏服务端框架、高并发在线服务、性能优化、稳定性建设、分布式系统（Kafka / ZooKeeper / Redis / Elasticsearch）；**NATS 节点间通信（辛克普雷）** |
 | **语言** | Golang（10 年+）、C#（10 年+）、Shell（10 年+）；Python（脚本与工具） |
 | **数据库** | MySQL（10 年+）、MongoDB、SQL Server、TiDB |
 | **缓存与消息** | Redis（10 年+）；Kafka；**NATS（辛克普雷 · 游戏各节点间通信）** |
