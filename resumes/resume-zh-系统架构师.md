@@ -11,7 +11,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 **19 年**软件研发，**10 年+ Golang / 分布式在线服务**实践。长期负责**游戏服务端框架、基础库与平台架构**的设计、演进与落地，支撑 SLG / 卡牌 / 休闲等多品类、多项目复用同一套服务端能力。
 
-主导技术栈从 **C# / SQL Server / Flash 页游**演进到 **Golang + MySQL + Redis + Kafka + ZooKeeper + Elasticsearch** 的分布式高并发架构；从零设计**支付平台、发行平台**及可复用会话、玩法逻辑、数据与运维体系。《Blox World》**峰值 DAU 50 万、最高在线 1 万**；摩奇卡卡时期多款产品**月流水超千万**。持续输出架构实践（Kafka 运维、Go 并发模型等）与开源组件（goutil、stdx、ChatServer 等）。
+主导技术栈从 **C# / SQL Server / Flash 页游**演进到 **Golang + MySQL + MongoDB + Redis + Kafka / NATS + ZooKeeper + Elasticsearch** 的分布式高并发架构；从零设计**支付平台、发行平台**及可复用会话、玩法逻辑、数据与运维体系。《Blox World》**峰值 DAU 50 万、最高在线 1 万**；摩奇卡卡时期多款产品**月流水超千万**。持续输出架构实践（Kafka 运维、Go 并发模型等）与开源组件（goutil、stdx、ChatServer 等）。
 
 ---
 
@@ -19,7 +19,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 - **自研游戏服务端框架**：从 0 设计并长期维护框架与公共类库，多项目在会话、玩法、数据、运维侧复用，降低并行项目重复建设。  
 - **高并发与稳定性**：在线服务架构支撑峰值 **DAU 50 万、最高在线 1 万**；性能优化、稳定性建设与可观测性（含 AI 辅助审查时的人工把关：并发、一致性、回滚）。  
-- **分布式与中间件**：Kafka、ZooKeeper、Redis、Elasticsearch 的调研、选型、团队推广与生产落地。  
+- **分布式与中间件**：Kafka、NATS、ZooKeeper、Redis、Elasticsearch 的调研、选型、团队推广与生产落地。  
 - **平台架构**：支付平台 + 发行平台，充值、对账、渠道与发行能力统一，**最多同时支撑 10 款游戏**运营。  
 - **架构升级路径**：页游 → 手游 / SLG / 卡牌；容器化（Docker）、版本管理（Git）与 Linux 生产环境标准化。
 
@@ -40,8 +40,8 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 - **从零设计**游戏服务端框架，长期维护基础框架与类库，多款产品共享同一套服务端能力。  
 - **从零架构**游戏支付平台、游戏发行平台，统一充值、对账、渠道对接，最多 **10 款游戏**并行运营。  
-- **主导技术演进**：Golang、Git、Docker、ZooKeeper、Kafka、Redis、Elasticsearch 选型与推广，完成向分布式、高并发在线服务的体系升级。  
-- 技术栈：Golang、C#（遗留与过渡）、MySQL、Linux；与约 50 人团队协作落地架构规范与中间件使用标准。
+- **主导技术演进**：Golang、Git、Docker、ZooKeeper、Kafka、NATS、Redis、Elasticsearch 选型与推广，完成向分布式、高并发在线服务的体系升级。  
+- 技术栈：Golang、C#（遗留与过渡）、MySQL、MongoDB、Linux；与约 50 人团队协作落地架构规范与中间件使用标准。
 
 ### 深圳力创世纪科技有限公司 · 技术总监  
 **2009.11 — 2012.12**
@@ -59,9 +59,10 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 | 类别 | 能力 |
 |------|------|
-| **架构** | 游戏服务端框架、高并发在线服务、性能优化、稳定性建设、分布式系统（Kafka / ZooKeeper / Redis / Elasticsearch） |
+| **架构** | 游戏服务端框架、高并发在线服务、性能优化、稳定性建设、分布式系统（Kafka / NATS / ZooKeeper / Redis / Elasticsearch） |
 | **语言** | Golang（10 年+）、C#（10 年+）、Shell（10 年+）；Python（脚本与工具） |
-| **数据** | MySQL（10 年+）、Redis（10 年+）、MongoDB、SQL Server、TiDB |
+| **数据库** | MySQL（10 年+）、MongoDB、SQL Server、TiDB |
+| **缓存与消息** | Redis（10 年+）；Kafka、NATS |
 | **系统** | Linux（10 年+）、Docker、Git |
 | **AI 工程** | Cursor / ChatGPT 用于设计、编码与 Code Review；关键路径人工把关架构与线上风险 |
 
