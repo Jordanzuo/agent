@@ -11,7 +11,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 **19 年**软件研发，**10 年+ Golang / 分布式在线服务**实践。长期负责**游戏服务端框架、基础库与平台架构**的设计、演进与落地，支撑 SLG / 卡牌 / 休闲等多品类、多项目复用同一套服务端能力。
 
-主导技术栈从 **C# / SQL Server / Flash 页游**演进到 **Golang + MySQL + MongoDB + Redis + Kafka + ZooKeeper + Elasticsearch** 的分布式高并发架构；**辛克普雷阶段**引入 **NATS** 承担游戏服务端**各节点间通信**。从零设计**支付平台、发行平台**及可复用会话、玩法逻辑、数据与运维体系。《Blox World》**峰值 DAU 50 万、最高在线 1 万**；摩奇卡卡时期多款产品**月流水超千万**。**2026.08 自辛克普雷离职**。持续输出架构实践（Kafka 运维、Go 并发模型等）与开源组件（goutil、stdx、ChatServer 等）。
+主导技术栈从 **C# / SQL Server / Flash 页游**演进到 **Golang + MySQL + MongoDB + Redis + Kafka + ZooKeeper + Elasticsearch** 的分布式高并发架构；**辛克普雷阶段**引入 **NATS** 承担游戏服务端**各节点间通信**。从零设计**支付平台、发行平台**及可复用会话、玩法逻辑、数据与运维体系。《Blox World》**峰值 DAU 50 万、最高在线 1 万**；摩奇卡卡时期多款产品**月流水超千万**。持续输出架构实践（Kafka 运维、Go 并发模型等）与开源组件（goutil、stdx、ChatServer 等）。
 
 ---
 
