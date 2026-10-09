@@ -11,7 +11,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 **19 年**软件开发经验，**10 年+ Golang** 与 **10 年+ C#** 生产实践。长期**亲手设计、编码并维护**游戏服务端框架、公共类库、支付 / 发行相关后端及高并发在线玩法服务；熟悉从需求到上线全链路交付。
 
-技术栈：**Golang、C#、MySQL、MongoDB、Redis、Kafka、NATS、Linux、Docker、Git**；具备微软企业级 C/S、B/S 与中大型游戏后端经验。参与产品《Blox World》（**峰值 DAU 50 万、最高在线 1 万**）及多款 SLG / 卡牌服务端；摩奇卡卡时期参与《大主宰》《校花的贴身高手》《射雕》等**月流水超千万**项目后端与框架建设。活跃维护个人开源库并撰写 Go / Kafka 等工程文章；日常使用 **Cursor** 提升编码与 Review 效率，核心逻辑与线上风险仍人工审查。
+技术栈：**Golang、C#、MySQL、MongoDB、Redis、Kafka、NATS（节点间通信）、Linux、Docker、Git**；具备微软企业级 C/S、B/S 与中大型游戏后端经验。参与产品《Blox World》（**峰值 DAU 50 万、最高在线 1 万**）及多款 SLG / 卡牌服务端；摩奇卡卡时期参与《大主宰》《校花的贴身高手》《射雕》等**月流水超千万**项目后端与框架建设。活跃维护个人开源库并撰写 Go / Kafka 等工程文章；日常使用 **Cursor** 提升编码与 Review 效率，核心逻辑与线上风险仍人工审查。
 
 ---
 
@@ -20,7 +20,8 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 - **语言**：Golang（10 年+，主力）、C#（10 年+）、Shell；Python（脚本）  
 - **数据库**：MySQL、MongoDB、SQL Server、TiDB  
 - **缓存**：Redis  
-- **消息与搜索**：Kafka、NATS、Elasticsearch；协调：ZooKeeper  
+- **消息与搜索**：Kafka、Elasticsearch；协调：ZooKeeper  
+- **节点通信**：NATS（游戏服务端**各节点之间**通信）  
 - **运行与工程**：Linux、Docker、Git  
 - **领域**：游戏服务端框架、会话与玩法逻辑、数据层设计、性能与稳定性、支付 / 发行业务后端  
 
@@ -32,7 +33,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 **2020.11 — 至今**
 
 - **设计与维护**游戏服务端框架与公共类库：会话、玩法模块、数据访问与运维钩子，供 SLG / 卡牌 / 休闲多项目复用。  
-- **后端开发与迭代**：《Dead Empire》《Invasion》《Kings Empire》《Galaxy Legends》《Blox World》等；重点保障《Blox World》高在线场景下的服务性能与稳定性。  
+- **后端开发与迭代**：《Dead Empire》《Invasion》《Kings Empire》《Galaxy Legends》《Blox World》等；基于 **NATS** 实现集群内**各节点间**通信；重点保障《Blox World》高在线场景下的服务性能与稳定性。  
 - **工程实践**：Code Review、并发与一致性评审、回滚与可观测性检查；引入 Cursor 辅助设计与编码，缩短迭代周期。  
 - 技术团队规模最多 15 人，仍深度参与关键模块设计与疑难问题排查。
 
@@ -42,7 +43,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 - **从零编写并演进**游戏服务端框架与基础类库，支撑多款手游共用后端能力。  
 - **开发支付平台、发行平台**后端：充值、对账、渠道对接，最多 **10 款游戏**并行接入。  
 - 使用 **Golang / C# / MySQL / MongoDB / Linux** 交付《大主宰》《校花的贴身高手》《射雕》等产品的服务端功能与性能优化。  
-- 落地 **Git、Docker、Kafka、NATS、Redis、ZooKeeper、Elasticsearch** 等在开发与环境中的日常使用。
+- 落地 **Git、Docker、Kafka、Redis、ZooKeeper、Elasticsearch** 及 **NATS 节点间通信** 等在开发与环境中的日常使用。
 
 ### 深圳力创世纪科技有限公司 · 技术总监（服务端开发）  
 **2009.11 — 2012.12**
@@ -77,7 +78,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 ## 开发方式与质量
 
 - 重视**可读性、复用与边界清晰**的模块划分（框架 + 业务）。  
-- 熟悉**高并发、缓存、消息队列（Kafka / NATS）**在游戏后端中的典型用法与坑点。  
+- 熟悉**高并发、缓存、Kafka 消息流**与 **NATS 节点间通信**在游戏后端中的典型用法与坑点。  
 - **AI 辅助开发**：Cursor / ChatGPT 用于方案与代码初稿；**并发、一致性、回滚**等关键路径坚持人工 Review。
 
 ---

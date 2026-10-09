@@ -33,7 +33,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 **2020.11 — 至今**
 
 - 合伙人兼技术总监，技术团队最多 **15 人**；对**技术方向、服务端架构、研发交付**及公司与业务侧**技术接口**负责。
-- 带领团队交付 SLG《Dead Empire》《Invasion》《Kings Empire》、卡牌《Galaxy Legends》、休闲《Blox World》等；其中《Blox World》**峰值 DAU 50 万、最高在线 1 万**。
+- 带领团队交付 SLG《Dead Empire》《Invasion》《Kings Empire》、卡牌《Galaxy Legends》、休闲《Blox World》等；其中《Blox World》**峰值 DAU 50 万、最高在线 1 万**；服务端集群以 **NATS** 支撑**各节点间**通信。
 - **管理层与研发桥梁**：向老板 / 合伙人对齐技术路线、成本与排期；与策划、运营、发行协调版本节奏与资源，在质量、进度与运营诉求间推动共识并落地。
 - **团队管理**：拆解里程碑、一对一辅导、技术评审与 Code Review，维持多项目并行下的稳定产出。
 - **AI 与工程文化**：推动 ChatGPT、Cursor 用于方案设计、编码与审查；要求 AI 出初稿与风险清单，人工把关并发、一致性、回滚与可观测性。
@@ -44,7 +44,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 - 管理约 **50 人**技术团队（含运维）；对游戏服务端、基础框架、**支付与发行体系**负责。
 - 带领团队交付《大主宰》《校花的贴身高手》《射雕》等，产品**月流水超千万**。
 - **从零搭建**游戏支付平台与发行平台，打通充值、对账、渠道与发行能力，最多同时支撑 **10 款游戏**运营。
-- 主导 Golang、Git、Docker、ZooKeeper、Kafka、NATS、Redis、Elasticsearch 等**选型与团队推广**，完成页游体系向分布式、高并发在线服务的升级。
+- 主导 Golang、Git、Docker、ZooKeeper、Kafka、Redis、Elasticsearch 等**选型与团队推广**，并引入 **NATS** 承担游戏服务端**各节点之间**的通信，完成页游体系向分布式、高并发在线服务的升级。
 - **公司级协调**：向管理层汇报技术方案、风险与人力；与策划、运营、发行、渠道对齐优先级与上线计划；培养骨干，保障多款产品并行研发与稳定运营。
 
 ### 深圳力创世纪科技有限公司 · 技术总监  
@@ -73,7 +73,7 @@ GitHub：[github.com/Jordanzuo](https://github.com/Jordanzuo) · 博客：筑梦
 
 ## 专业技能（管理视角）
 
-- **研发体系**：游戏服务端框架、高并发在线服务、稳定性与性能治理、分布式中间件（Kafka、NATS 等）落地。  
+- **研发体系**：游戏服务端框架、高并发在线服务、稳定性与性能治理；Kafka 等中间件与 **NATS 节点间通信**落地。  
 - **数据库与缓存**：MySQL、MongoDB、SQL Server、TiDB；Redis 及检索（Elasticsearch）等生产实践。  
 - **平台能力**：支付 / 发行平台、多游戏并行运营、研发—发行—收款闭环。  
 - **工程与管理**：最多 50 人团队、人员培养；Linux、Docker、Git 与现代化研发流程。  
