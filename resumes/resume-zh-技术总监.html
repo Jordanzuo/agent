@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>左贤清 · 技术总监</title>
+<style>
+@page { size: A4; margin: 12mm 13mm; }
+:root {
+  --accent: #1f3a5f;
+  --accent-soft: #eaf0f7;
+  --text: #1c2430;
+  --muted: #5b6573;
+  --line: #dde2e8;
+}
+* { box-sizing: border-box; }
+html { background: #eef0f3; }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 10pt;
+  line-height: 1.55;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.sheet {
+  width: 210mm;
+  margin: 10mm auto;
+  padding: 14mm 15mm;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(20, 30, 50, .12);
+}
+a { color: inherit; text-decoration: none; }
+strong { font-weight: 650; color: #111a27; }
+
+header.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8mm;
+  padding-bottom: 4.5mm;
+  border-bottom: 2.2px solid var(--accent);
+}
+.name { margin: 0; font-size: 25pt; font-weight: 700; letter-spacing: .12em; line-height: 1.15; }
+.role { margin: 1.5mm 0 0; font-size: 12.5pt; color: var(--accent); font-weight: 650; letter-spacing: .02em; }
+.role span { color: var(--muted); font-weight: 400; }
+.contact { text-align: right; font-size: 9pt; color: var(--muted); line-height: 1.7; }
+.contact b { font-weight: 400; color: var(--text); }
+.chip {
+  display: inline-block;
+  margin-top: 1mm;
+  padding: 0 2.6mm;
+  font-size: 8.5pt;
+  line-height: 1.6;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 99px;
+}
+
+section { margin-top: 5.5mm; }
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+  margin: 0 0 2.6mm;
+  font-size: 11.5pt;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--accent);
+}
+h2::before { content: ""; width: 1.4mm; height: 4.4mm; border-radius: 1px; background: var(--accent); }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+.summary p { margin: 0 0 2mm; }
+.summary p:last-child { margin-bottom: 0; }
+
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6mm 3.4mm; }
+.card {
+  padding: 2.4mm 3.2mm 2.6mm;
+  background: var(--accent-soft);
+  border-left: 2.4px solid var(--accent);
+  border-radius: 0 3px 3px 0;
+  break-inside: avoid;
+}
+.card h4 { margin: 0 0 .8mm; font-size: 9.8pt; color: var(--accent); }
+.card p { margin: 0; font-size: 9.2pt; line-height: 1.5; }
+
+.job { margin-bottom: 4mm; break-inside: avoid; }
+.job:last-child { margin-bottom: 0; }
+.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+.job-head h3 { margin: 0; font-size: 10.6pt; font-weight: 700; }
+.job-head h3 em { font-style: normal; font-weight: 500; color: var(--accent); margin-left: 2mm; }
+.date { flex: none; font-size: 9.2pt; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tech { margin: .4mm 0 0; font-size: 8.8pt; color: var(--muted); }
+.job ul, .list { margin: 1.4mm 0 0; padding-left: 4.4mm; }
+.job li, .list li { margin: 0 0 .9mm; padding-left: .5mm; }
+.job li::marker, .list li::marker { color: var(--accent); }
+
+.skills { display: grid; grid-template-columns: 24mm 1fr; gap: 1.4mm 3mm; }
+.skills dt { font-weight: 650; color: var(--accent); }
+.skills dd { margin: 0; }
+
+.edu { display: flex; justify-content: space-between; align-items: baseline; }
+.edu .school { font-weight: 700; }
+.edu .major { margin-left: 3mm; color: var(--muted); }
+
+@media print {
+  html { background: #fff; }
+  .sheet { width: auto; margin: 0; padding: 0; box-shadow: none; }
+  h2 { break-after: avoid; }
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+<header class="top">
+  <div>
+    <h1 class="name">左贤清</h1>
+    <p class="role">技术总监 <span>· 研发负责人 · 游戏服务端架构</span></p>
+  </div>
+  <div class="contact">
+    <div><b>18200539894</b> · 成都</div>
+    <div>zuoxianqing@163.com · jordanzuo20@gmail.com</div>
+    <div><a href="https://github.com/Jordanzuo">github.com/Jordanzuo</a> · 博客：筑梦之队 · 简书</div>
+    <span class="chip">离职（2026.08）</span>
+  </div>
+</header>
+
+<section class="summary">
+  <h2>专业摘要</h2>
+    <p>19 年软件研发经验，其中 <strong>16 年担任技术管理岗位</strong>。长期以技术总监、合伙人身份，对技术方向、服务端体系、研发交付与商业结果负责，覆盖网页游戏、手游、SLG、卡牌与休闲等品类。擅长在老板、策划、运营、发行与研发团队之间<strong>对齐目标、化解分歧、推动落地</strong>：既能讲清技术取舍，也能把业务诉求转化为可执行的排期与方案。</p>
+    <p>最多带领约 50 人的技术团队（含运维）；在辛克普雷任合伙人兼技术总监，以小团队支撑高 DAU 在线产品。摩奇卡卡时期多款产品<strong>月流水超千万</strong>，《Blox World》<strong>峰值 DAU 50 万、最高在线 1 万</strong>。将 Cursor 引入设计、编码与 Code Review 后，审查与交付周期缩短约一个数量级，关键路径仍由人工把关。</p>
+</section>
+
+<section>
+  <h2>核心业绩</h2>
+  <div class="cards">
+    <div class="card"><h4>商业结果</h4><p>摩奇卡卡时期负责《大主宰》《校花的贴身高手》《射雕》等产品的技术，月流水超千万；辛克普雷《Blox World》峰值 DAU 50 万、最高在线 1 万。</p></div>
+    <div class="card"><h4>组织建设</h4><p>2009 年起担任技术总监，最多带领约 50 人的技术团队；在辛克普雷任合伙人兼技术总监，团队最多 15 人。</p></div>
+    <div class="card"><h4>沟通协调</h4><p>长期担任技术与业务之间的接口人：向上汇报方案、风险与资源需求；横向与策划、运营、发行对齐优先级与上线窗口；向下拆解目标、培养骨干、建立评审与反馈机制。</p></div>
+    <div class="card"><h4>平台建设</h4><p>从零搭建游戏支付平台与发行平台，最多同时支撑 10 款游戏运营，形成可复用的研发—发行—收款闭环。</p></div>
+    <div class="card"><h4>架构升级</h4><p>自研游戏服务端框架与基础库，推动团队从 C# / SQL Server / Flash 页游体系，演进到 Golang + MySQL + Redis + Kafka 的高并发在线服务架构。</p></div>
+    <div class="card"><h4>AI 工程</h4><p>将 ChatGPT、Cursor 用于方案设计、编码与 Code Review，审查与交付周期降低约一个数量级；并发、一致性与回滚仍由人工确认。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>工作经历</h2>
+  <article class="job">
+    <div class="job-head"><h3>成都辛克普雷科技有限公司<em>合伙人 / 技术总监</em></h3><span class="date">2020.11 — 2026.08</span></div>
+    <ul>
+      <li>合伙人兼技术总监，团队最多 15 人；负责技术方向、服务端架构与研发交付，并担任公司与业务侧的技术接口人。</li>
+      <li>带领团队研发 SLG《Dead Empire》《Invasion》《Kings Empire》、卡牌《Galaxy Legends》与休闲《Blox World》；其中《Blox World》峰值 DAU 50 万、最高在线 1 万。</li>
+      <li>持续设计并维护服务端框架与公共类库，让多个项目在会话、玩法逻辑、数据与运维层面复用，减少重复建设。</li>
+      <li>作为管理层与研发之间的桥梁：与老板 / 合伙人对齐技术路线、成本与排期；与策划、运营、发行协调版本节奏与资源，在质量、进度与运营诉求之间推动共识并落地。</li>
+      <li>团队管理：拆解里程碑，开展一对一辅导、技术评审与 Code Review，保障多项目并行时的稳定产出。</li>
+      <li>AI 研究与推广：将 ChatGPT、Cursor 用于方案设计、编码与代码审查；要求 AI 先给出初稿与风险清单，并发、一致性、回滚与可观测性由人工把关。</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="job-head"><h3>成都摩奇卡卡科技有限责任公司<em>技术总监</em></h3><span class="date">2013.04 — 2020.09</span></div>
+    <ul>
+      <li>管理约 50 人的技术团队（含运维），负责游戏服务端、基础框架、支付与发行体系。</li>
+      <li>带领团队交付《大主宰》《校花的贴身高手》《射雕》等游戏，产品月流水超千万。</li>
+      <li>从零设计游戏服务端框架并长期维护，支撑多款产品复用同一套服务端能力。</li>
+      <li>从零搭建游戏支付平台与发行平台，打通充值、对账、渠道与发行，最多同时支撑 10 款游戏运营，减少各项目的重复对接。</li>
+      <li>主导 Golang、Git、Docker、ZooKeeper、Kafka、Redis、Elasticsearch 的调研、选型与团队推广，完成页游技术体系向分布式、高并发在线服务的升级。</li>
+      <li>承担公司级跨部门协调：向管理层汇报技术方案、风险与人力需求；与策划、运营、发行、渠道对齐需求优先级与上线计划；培养骨干，保障多款产品并行研发与稳定运营。</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="job-head"><h3>深圳力创世纪科技有限公司<em>技术总监</em></h3><span class="date">2009.11 — 2012.12</span></div>
+    <ul>
+      <li>管理约 20 人的技术团队，研发网页游戏《王者天下》《诸子百家》等，负责服务端架构、技术交付与团队管理。</li>
+      <li>与产品、运营保持高频沟通，在版本迭代与活动排期中协调研发资源。</li>
+      <li>建立任务拆解、进度同步与问题升级机制，完成从资深开发到技术负责人的角色转换。</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="job-head"><h3>早期经历<em>软件工程师</em></h3><span class="date">2007.01 — 2009.10</span></div>
+    <ul>
+      <li>深圳微软技术中心（2008.04 — 2009.10）：使用 C#、ASP.NET 开发多类 C/S、B/S 企业系统。</li>
+      <li>北京中软国际信息技术有限公司（2007.01 — 2008.03）：使用 C# 开发烟草行业打码到条及出入库系统。</li>
+    </ul>
+  </article>
+</section>
+
+<section>
+  <h2>专业技能</h2>
+  <dl class="skills">
+    <dt>团队管理</dt><dd>最多约 50 人团队的管理与人才培养；向上、横向、向下的沟通协调</dd>
+    <dt>平台与架构</dt><dd>游戏服务端框架、高并发在线服务、稳定性建设；支付 / 发行平台，最多同时支撑 10 款游戏</dd>
+    <dt>分布式系统</dt><dd>Kafka、NATS、ZooKeeper、Redis、Elasticsearch</dd>
+    <dt>语言与数据</dt><dd>Golang、C#、Shell（均 10 年以上）；MySQL、Redis、MongoDB、SQL Server、TiDB</dd>
+    <dt>系统与工具</dt><dd>Linux、Docker、Git</dd>
+    <dt>AI 工程</dt><dd>ChatGPT、Cursor 用于设计、编码与 Code Review；关键路径由人工把关架构与线上风险</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>教育经历</h2>
+  <div class="edu"><div><span class="school">东北电力大学</span><span class="major">计算机科学与技术 · 学士</span></div><span class="date">2003 — 2007</span></div>
+</section>
+</main>
+</body>
+</html>
