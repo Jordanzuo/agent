@@ -7,6 +7,8 @@ import html
 import re
 from pathlib import Path
 
+from content_en import RESUMES_EN
+
 OUT = Path(__file__).parent
 
 NAME = "左贤清"
@@ -22,6 +24,49 @@ MOQI = "成都摩奇卡卡科技有限责任公司"
 LCSJ = "深圳力创世纪科技有限公司"
 
 EDU = ("东北电力大学", "计算机科学与技术 · 学士", "2003 — 2007")
+
+LANGS = {
+    "zh": {
+        "html_lang": "zh-CN",
+        "name": NAME,
+        "city": CITY,
+        "blog": BLOG,
+        "status": STATUS,
+        "summary": "专业摘要",
+        "education": "教育经历",
+        "edu": EDU,
+        "colon": "：",
+        "name_ls": ".12em",
+        "h2_ls": ".08em",
+        "dt_w": "24mm",
+        "latin_first": "",
+        "fs": "10pt",
+        "card_fs": "9.2pt",
+        "pm": "12mm 13mm",
+        "contact_nowrap": "",
+        "extra_css": "",
+    },
+    "en": {
+        "html_lang": "en",
+        "name": "Xianqing Zuo",
+        "city": "Chengdu, China",
+        "blog": "Blog: 筑梦之队 (Dream Team) · Jianshu",
+        "status": "Between roles · since Aug 2026",
+        "summary": "Professional Summary",
+        "education": "Education",
+        "edu": ("Northeast Electric Power University", "B.S. in Computer Science and Technology", "2003 — 2007"),
+        "colon": ": ",
+        "name_ls": ".02em",
+        "h2_ls": ".04em",
+        "dt_w": "38mm",
+        "latin_first": '"Segoe UI", Roboto, "Helvetica Neue", Arial, ',
+        "fs": "9.3pt",
+        "card_fs": "8.8pt",
+        "pm": "10mm 12mm",
+        "contact_nowrap": ".contact div { white-space: nowrap; }",
+        "extra_css": ".job { break-inside: auto; }\n.job li { break-inside: avoid; }\n.job-head, .tech { break-after: avoid; }",
+    },
+}
 
 RESUMES = [
     {
@@ -270,7 +315,7 @@ RESUMES = [
 ]
 
 CSS = """
-@page { size: A4; margin: 12mm 13mm; }
+@page { size: A4; margin: %(pm)s; }
 :root {
   --accent: %(accent)s;
   --accent-soft: %(accent_soft)s;
@@ -283,10 +328,10 @@ html { background: #eef0f3; }
 body {
   margin: 0;
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+  font-family: %(latin_first)s-apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
-  font-size: 10pt;
-  line-height: 1.55;
+  font-size: %(fs)s;
+  line-height: 1.5;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
@@ -308,11 +353,12 @@ header.top {
   padding-bottom: 4.5mm;
   border-bottom: 2.2px solid var(--accent);
 }
-.name { margin: 0; font-size: 25pt; font-weight: 700; letter-spacing: .12em; line-height: 1.15; }
+.name { margin: 0; font-size: 25pt; font-weight: 700; letter-spacing: %(name_ls)s; line-height: 1.15; }
 .role { margin: 1.5mm 0 0; font-size: 12.5pt; color: var(--accent); font-weight: 650; letter-spacing: .02em; }
 .role span { color: var(--muted); font-weight: 400; }
 .contact { text-align: right; font-size: 9pt; color: var(--muted); line-height: 1.7; }
 .contact b { font-weight: 400; color: var(--text); }
+%(contact_nowrap)s
 .chip {
   display: inline-block;
   margin-top: 1mm;
@@ -332,7 +378,7 @@ h2 {
   margin: 0 0 2.6mm;
   font-size: 11.5pt;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: %(h2_ls)s;
   color: var(--accent);
 }
 h2::before { content: ""; width: 1.4mm; height: 4.4mm; border-radius: 1px; background: var(--accent); }
@@ -350,7 +396,7 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
   break-inside: avoid;
 }
 .card h4 { margin: 0 0 .8mm; font-size: 9.8pt; color: var(--accent); }
-.card p { margin: 0; font-size: 9.2pt; line-height: 1.5; }
+.card p { margin: 0; font-size: %(card_fs)s; line-height: 1.5; }
 
 .job { margin-bottom: 4mm; break-inside: avoid; }
 .job:last-child { margin-bottom: 0; }
@@ -363,13 +409,15 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .job li, .list li { margin: 0 0 .9mm; padding-left: .5mm; }
 .job li::marker, .list li::marker { color: var(--accent); }
 
-.skills { display: grid; grid-template-columns: 24mm 1fr; gap: 1.4mm 3mm; }
+.skills { display: grid; grid-template-columns: %(dt_w)s 1fr; gap: 1.4mm 3mm; }
 .skills dt { font-weight: 650; color: var(--accent); }
 .skills dd { margin: 0; }
 
 .edu { display: flex; justify-content: space-between; align-items: baseline; }
 .edu .school { font-weight: 700; }
 .edu .major { margin-left: 3mm; color: var(--muted); }
+
+%(extra_css)s
 
 @media print {
   html { background: #fff; }
@@ -381,28 +429,31 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
 def inline_html(text: str) -> str:
     escaped = html.escape(text, quote=False)
-    return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
+    escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
+    return re.sub(r"\*(.+?)\*", r"<em class=\"t\">\1</em>", escaped)
 
 
 def render_html(r: dict) -> str:
+    L = LANGS[r.get("lang", "zh")]
     parts = []
     parts.append(
         f"""<header class="top">
   <div>
-    <h1 class="name">{NAME}</h1>
+    <h1 class="name">{L['name']}</h1>
     <p class="role">{html.escape(r['role'])} <span>· {html.escape(r['tagline'])}</span></p>
   </div>
   <div class="contact">
-    <div><b>{PHONE}</b> · {CITY}</div>
+    <div><b>{PHONE}</b> · {L['city']}</div>
     <div>{EMAILS[0]} · {EMAILS[1]}</div>
-    <div><a href="https://{GITHUB}">{GITHUB}</a> · {BLOG}</div>
-    <span class="chip">{STATUS}</span>
+    <div><a href="https://{GITHUB}">{GITHUB}</a></div>
+    <div>{L['blog']}</div>
+    <span class="chip">{L['status']}</span>
   </div>
 </header>"""
     )
 
     summary = "\n".join(f"    <p>{inline_html(p)}</p>" for p in r["summary"])
-    parts.append(f'<section class="summary">\n  <h2>专业摘要</h2>\n{summary}\n</section>')
+    parts.append(f'<section class="summary">\n  <h2>{L['summary']}</h2>\n{summary}\n</section>')
 
     cards = "\n".join(
         f'    <div class="card"><h4>{html.escape(t)}</h4><p>{inline_html(d)}</p></div>'
@@ -435,15 +486,27 @@ def render_html(r: dict) -> str:
 
     parts.append(
         f"""<section>
-  <h2>教育经历</h2>
-  <div class="edu"><div><span class="school">{EDU[0]}</span><span class="major">{EDU[1]}</span></div><span class="date">{EDU[2]}</span></div>
+  <h2>{L['education']}</h2>
+  <div class="edu"><div><span class="school">{L['edu'][0]}</span><span class="major">{L['edu'][1]}</span></div><span class="date">{L['edu'][2]}</span></div>
 </section>"""
     )
 
     body = "\n\n".join(parts)
-    css = CSS % {"accent": r["accent"], "accent_soft": r["accent_soft"]}
+    css = CSS % {
+        "accent": r["accent"],
+        "accent_soft": r["accent_soft"],
+        "name_ls": L["name_ls"],
+        "h2_ls": L["h2_ls"],
+        "dt_w": L["dt_w"],
+        "latin_first": L["latin_first"],
+        "fs": L["fs"],
+        "card_fs": L["card_fs"],
+        "pm": L["pm"],
+        "contact_nowrap": L["contact_nowrap"],
+        "extra_css": L["extra_css"],
+    }
     return f"""<!doctype html>
-<html lang="zh-CN">
+<html lang="{L['html_lang']}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -460,15 +523,17 @@ def render_html(r: dict) -> str:
 
 
 def render_md(r: dict) -> str:
-    out = [f"# {NAME}", "", f"**{r['role']} · {r['tagline']}**", ""]
-    out.append(f"{PHONE} · {CITY} · {EMAILS[0]} · {EMAILS[1]}  ")
-    out.append(f"GitHub：[{GITHUB}](https://{GITHUB}) · {BLOG} · **{STATUS}**")
-    out += ["", "---", "", "## 专业摘要", ""]
+    L = LANGS[r.get("lang", "zh")]
+    c = L["colon"]
+    out = [f"# {L['name']}", "", f"**{r['role']} · {r['tagline']}**", ""]
+    out.append(f"{PHONE} · {L['city']} · {EMAILS[0]} · {EMAILS[1]}  ")
+    out.append(f"GitHub{c}[{GITHUB}](https://{GITHUB}) · {L['blog']} · **{L['status']}**")
+    out += ["", "---", "", f"## {L['summary']}", ""]
     for p in r["summary"]:
         out += [p, ""]
     out += ["---", "", f"## {r['cards_title']}", ""]
     for t, d in r["cards"]:
-        out.append(f"- **{t}**：{d}")
+        out.append(f"- **{t}**{c}{d}")
     out += ["", "---", "", f"## {r['jobs_title']}", ""]
     for j in r["jobs"]:
         out.append(f"### {j['company']} · {j['role']}  ")
@@ -477,18 +542,18 @@ def render_md(r: dict) -> str:
         out += [f"- {b}" for b in j["bullets"]]
         out.append("")
     out += ["---", "", f"## {r['skills_title']}", ""]
-    out += [f"- **{k}**：{v}" for k, v in r["skills"]]
+    out += [f"- **{k}**{c}{v}" for k, v in r["skills"]]
     out.append("")
     if r.get("oss"):
         out += ["---", "", f"## {r['oss']['title']}", ""]
         out += [f"- {i}" for i in r["oss"]["items"]]
         out.append("")
-    out += ["---", "", "## 教育经历", "", f"**{EDU[0]}** · {EDU[1]} · {EDU[2]}", ""]
+    out += ["---", "", f"## {L['education']}", "", f"**{L['edu'][0]}** · {L['edu'][1]} · {L['edu'][2]}", ""]
     return "\n".join(out)
 
 
 def main() -> None:
-    for r in RESUMES:
+    for r in RESUMES + RESUMES_EN:
         (OUT / f"{r['file']}.html").write_text(render_html(r), encoding="utf-8")
         (OUT / f"{r['file']}.md").write_text(render_md(r), encoding="utf-8")
         print("wrote", r["file"])
