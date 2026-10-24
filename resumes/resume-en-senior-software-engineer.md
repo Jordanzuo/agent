@@ -3,7 +3,7 @@
 **Senior Software Engineer · Golang Backend · Game Servers**
 
 18200539894 · Chengdu, China · zuoxianqing@163.com · jordanzuo20@gmail.com  
-GitHub: [github.com/Jordanzuo](https://github.com/Jordanzuo) · Blog: 筑梦之队 (Dream Team) · Jianshu · **Between roles · since Aug 2026**
+GitHub: [github.com/Jordanzuo](https://github.com/Jordanzuo) · Blog: 筑梦之队 (Dreambuild) · Jianshu · **Between roles · since Aug 2026**
 
 ---
 
@@ -28,7 +28,7 @@ Worked on the servers of *Blox World* (**500K peak DAU, 10K peak concurrent user
 
 ## Projects & Experience
 
-### Chengdu Xinkepulei Technology Co., Ltd. · Partner / Technical Director (Core Developer)  
+### Chengdu Thinkplay Technology Co., Ltd. · Partner / Technical Director (Core Developer)  
 **Nov 2020 — Aug 2026**
 
 - Designed and maintained the game server framework and shared libraries, reused across SLG, card, and casual projects.
@@ -72,7 +72,7 @@ Worked on the servers of *Blox World* (**500K peak DAU, 10K peak concurrent user
 ## Open Source & Writing
 
 - **goutil**: Go utility library; **stdx**: supplementary types for the Go standard library; **ChatServer / ChatServerCenter**: a chat server pair.
-- **Blog "筑梦之队" (Dream Team)**: Kafka operations and partition reassignment, the Go concurrency model (G/P/M), null values and data validity, and more.
+- **Blog "筑梦之队" (Dreambuild)**: Kafka operations and partition reassignment, the Go concurrency model (G/P/M), null values and data validity, and more.
 
 ---
 

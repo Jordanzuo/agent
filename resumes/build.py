@@ -50,7 +50,7 @@ LANGS = {
         "html_lang": "en",
         "name": "Xianqing Zuo",
         "city": "Chengdu, China",
-        "blog": "Blog: 筑梦之队 (Dream Team) · Jianshu",
+        "blog": "Blog: 筑梦之队 (Dreambuild) · Jianshu",
         "status": "Between roles · since Aug 2026",
         "summary": "Professional Summary",
         "education": "Education",

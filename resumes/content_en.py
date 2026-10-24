@@ -1,6 +1,6 @@
 """English content for the three role-targeted resumes (rendered by build.py)."""
 
-XINKE = "Chengdu Xinkepulei Technology Co., Ltd."
+XINKE = "Chengdu Thinkplay Technology Co., Ltd."
 MOQI = "Chengdu Moqikaka Technology Co., Ltd."
 LCSJ = "Shenzhen Lichuang Shiji Technology Co., Ltd."
 MS = "Microsoft Technology Center, Shenzhen"
@@ -25,7 +25,7 @@ RESUMES_EN = [
             "I align owners, designers, operations, publishing, and engineering teams, resolve disagreements, "
             "and **drive decisions through to execution**: I can explain technical trade-offs clearly "
             "and turn business requests into actionable schedules and plans.",
-            "Have led teams of up to about 50 people (including operations). At Xinkepulei, served as partner and "
+            "Have led teams of up to about 50 people (including operations). At Thinkplay, served as partner and "
             "Technical Director, supporting a high-DAU online product with a small team. Moqikaka titles reached "
             "**monthly revenue above RMB 10 million**, and *Blox World* reached **500K peak DAU and 10K peak concurrent users**. "
             "Since adopting Cursor for design, coding, and code review, review and delivery cycles have shortened "
@@ -34,9 +34,9 @@ RESUMES_EN = [
         "cards_title": "Key Achievements",
         "cards": [
             ("Business Results", "At Moqikaka, owned the technology behind " + MOQI_GAMES + ", with monthly revenue above RMB 10 million. "
-                                 "At Xinkepulei, *Blox World* reached 500K peak DAU and 10K peak concurrent users."),
+                                 "At Thinkplay, *Blox World* reached 500K peak DAU and 10K peak concurrent users."),
             ("Organization", "Technical Director since 2009, leading teams of up to about 50 people. "
-                             "At Xinkepulei, partner and Technical Director with a team of up to 15."),
+                             "At Thinkplay, partner and Technical Director with a team of up to 15."),
             ("Alignment & Communication", "Long-term liaison between engineering and the business: reporting plans, risks, and resource needs upward; "
                                           "aligning priorities and launch windows with design, operations, and publishing; "
                                           "and breaking down goals, growing team leads, and building review and feedback loops downward."),
@@ -120,7 +120,7 @@ RESUMES_EN = [
             "and delivery of game server frameworks, base libraries, and platform systems, so that SLG, card, and casual titles "
             "across many projects share one server-side foundation.",
             "Led the stack's evolution from C# / SQL Server / Flash web games to a distributed, high-concurrency architecture built on "
-            "**Golang + MySQL + MongoDB + Redis + Kafka + ZooKeeper + Elasticsearch**, introduced NATS at Xinkepulei for communication "
+            "**Golang + MySQL + MongoDB + Redis + Kafka + ZooKeeper + Elasticsearch**, introduced NATS at Thinkplay for communication "
             "between game server nodes, and designed the payment and publishing platforms from scratch. "
             "*Blox World* reached **500K peak DAU and 10K peak concurrent users**; Moqikaka products reached monthly revenue above RMB 10 million. "
             "Continues to share architecture practice (Kafka operations, the Go concurrency model, and more) "
@@ -132,7 +132,7 @@ RESUMES_EN = [
                                  "the session, gameplay-logic, data, and operations layers and cutting duplicated work."),
             ("High-Concurrency Services", "Supported *Blox World* at 500K peak DAU and 10K peak concurrent users; ongoing performance tuning and stability engineering."),
             ("Distributed Middleware", "At Moqikaka, led research, selection, and adoption of Kafka, ZooKeeper, Redis, and Elasticsearch; "
-                                       "at Xinkepulei, used NATS for communication between game server nodes."),
+                                       "at Thinkplay, used NATS for communication between game server nodes."),
             ("Platform Architecture", "Built the payment and publishing platforms from scratch, unifying top-ups, reconciliation, channels, and publishing "
                                       "for up to 10 live games."),
             ("Stack Evolution", "Moved the team from a C# / SQL Server / Flash web-game stack to Golang + MySQL + Redis + Kafka, "
@@ -196,7 +196,7 @@ RESUMES_EN = [
             "items": [
                 "**GitHub** (github.com/Jordanzuo): goutil (Go utility library), stdx (supplementary types for the Go standard library), "
                 "ChatServer / ChatServerCenter (a chat server pair).",
-                "**Blog \"筑梦之队\" (Dream Team)**: Kafka operations and partition reassignment, the Go concurrency model (G/P/M), null values and data validity, and more.",
+                "**Blog \"筑梦之队\" (Dreambuild)**: Kafka operations and partition reassignment, the Go concurrency model (G/P/M), null values and data validity, and more.",
             ],
         },
     },
@@ -281,7 +281,7 @@ RESUMES_EN = [
             "title": "Open Source & Writing",
             "items": [
                 "**goutil**: Go utility library; **stdx**: supplementary types for the Go standard library; **ChatServer / ChatServerCenter**: a chat server pair.",
-                "**Blog \"筑梦之队\" (Dream Team)**: Kafka operations and partition reassignment, the Go concurrency model (G/P/M), null values and data validity, and more.",
+                "**Blog \"筑梦之队\" (Dreambuild)**: Kafka operations and partition reassignment, the Go concurrency model (G/P/M), null values and data validity, and more.",
             ],
         },
     },
