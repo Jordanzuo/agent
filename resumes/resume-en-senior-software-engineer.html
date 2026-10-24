@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xianqing Zuo · Senior Software Engineer</title>
+<style>
+@page { size: A4; margin: 10mm 12mm; }
+:root {
+  --accent: #3b3f8f;
+  --accent-soft: #ecedf8;
+  --text: #1c2430;
+  --muted: #5b6573;
+  --line: #dde2e8;
+}
+* { box-sizing: border-box; }
+html { background: #eef0f3; }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 9.3pt;
+  line-height: 1.5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.sheet {
+  width: 210mm;
+  margin: 10mm auto;
+  padding: 14mm 15mm;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(20, 30, 50, .12);
+}
+a { color: inherit; text-decoration: none; }
+strong { font-weight: 650; color: #111a27; }
+
+header.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8mm;
+  padding-bottom: 4.5mm;
+  border-bottom: 2.2px solid var(--accent);
+}
+.name { margin: 0; font-size: 25pt; font-weight: 700; letter-spacing: .02em; line-height: 1.15; }
+.role { margin: 1.5mm 0 0; font-size: 12.5pt; color: var(--accent); font-weight: 650; letter-spacing: .02em; }
+.role span { color: var(--muted); font-weight: 400; }
+.contact { text-align: right; font-size: 9pt; color: var(--muted); line-height: 1.7; }
+.contact b { font-weight: 400; color: var(--text); }
+.contact div { white-space: nowrap; }
+.chip {
+  display: inline-block;
+  margin-top: 1mm;
+  padding: 0 2.6mm;
+  font-size: 8.5pt;
+  line-height: 1.6;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 99px;
+}
+
+section { margin-top: 5.5mm; }
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+  margin: 0 0 2.6mm;
+  font-size: 11.5pt;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--accent);
+}
+h2::before { content: ""; width: 1.4mm; height: 4.4mm; border-radius: 1px; background: var(--accent); }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+.summary p { margin: 0 0 2mm; }
+.summary p:last-child { margin-bottom: 0; }
+
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6mm 3.4mm; }
+.card {
+  padding: 2.4mm 3.2mm 2.6mm;
+  background: var(--accent-soft);
+  border-left: 2.4px solid var(--accent);
+  border-radius: 0 3px 3px 0;
+  break-inside: avoid;
+}
+.card h4 { margin: 0 0 .8mm; font-size: 9.8pt; color: var(--accent); }
+.card p { margin: 0; font-size: 8.8pt; line-height: 1.5; }
+
+.job { margin-bottom: 4mm; break-inside: avoid; }
+.job:last-child { margin-bottom: 0; }
+.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+.job-head h3 { margin: 0; font-size: 10.6pt; font-weight: 700; }
+.job-head h3 em { font-style: normal; font-weight: 500; color: var(--accent); margin-left: 2mm; }
+.date { flex: none; font-size: 9.2pt; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tech { margin: .4mm 0 0; font-size: 8.8pt; color: var(--muted); }
+.job ul, .list { margin: 1.4mm 0 0; padding-left: 4.4mm; }
+.job li, .list li { margin: 0 0 .9mm; padding-left: .5mm; }
+.job li::marker, .list li::marker { color: var(--accent); }
+
+.skills { display: grid; grid-template-columns: 38mm 1fr; gap: 1.4mm 3mm; }
+.skills dt { font-weight: 650; color: var(--accent); }
+.skills dd { margin: 0; }
+
+.edu { display: flex; justify-content: space-between; align-items: baseline; }
+.edu .school { font-weight: 700; }
+.edu .major { margin-left: 3mm; color: var(--muted); }
+
+.job { break-inside: auto; }
+.job li { break-inside: avoid; }
+.job-head, .tech { break-after: avoid; }
+
+@media print {
+  html { background: #fff; }
+  .sheet { width: auto; margin: 0; padding: 0; box-shadow: none; }
+  h2 { break-after: avoid; }
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+<header class="top">
+  <div>
+    <h1 class="name">Xianqing Zuo</h1>
+    <p class="role">Senior Software Engineer <span>· Golang Backend · Game Servers</span></p>
+  </div>
+  <div class="contact">
+    <div><b>18200539894</b> · Chengdu, China</div>
+    <div>zuoxianqing@163.com · jordanzuo20@gmail.com</div>
+    <div><a href="https://github.com/Jordanzuo">github.com/Jordanzuo</a></div>
+    <div>Blog: 筑梦之队 (Dreambuild) · Jianshu</div>
+    <span class="chip">Between roles · since Aug 2026</span>
+  </div>
+</header>
+
+<section class="summary">
+  <h2>Professional Summary</h2>
+    <p>Software engineer with 19 years of experience and more than 10 years of production work in each of Golang and C#. Long-term hands-on designer, implementer, and maintainer of game server frameworks, shared libraries, and payment and publishing backends, comfortable owning delivery from requirements to release.</p>
+    <p>Worked on the servers of <em class=\"t\">Blox World</em> (<strong>500K peak DAU, 10K peak concurrent users</strong>) and several SLG and card games; at Moqikaka, contributed to the servers and base framework behind products such as <em class=\"t\">Da Zhuzai</em> (大主宰), <em class=\"t\">Xiaohua de Tieshen Gaoshou</em> (校花的贴身高手), and <em class=\"t\">She Diao</em> (射雕), which reached <strong>monthly revenue above RMB 10 million</strong>. Earlier, built enterprise systems in C# and ASP.NET at Microsoft Technology Center, Shenzhen. Maintains open-source libraries and writes about Go, Kafka, and more; uses Cursor daily to speed up coding and review, with core logic and production risk still reviewed by people.</p>
+</section>
+
+<section>
+  <h2>Core Tech Stack</h2>
+  <div class="cards">
+    <div class="card"><h4>Languages</h4><p>Golang (10+ years, primary), C# (10+ years), Shell; Python for scripts</p></div>
+    <div class="card"><h4>Databases</h4><p>MySQL, MongoDB, SQL Server, TiDB</p></div>
+    <div class="card"><h4>Cache</h4><p>Redis</p></div>
+    <div class="card"><h4>Messaging &amp; Distributed</h4><p>Kafka, NATS, ZooKeeper, Elasticsearch</p></div>
+    <div class="card"><h4>Runtime &amp; Tooling</h4><p>Linux, Docker, Git</p></div>
+    <div class="card"><h4>Domains</h4><p>Game server frameworks, session and gameplay logic, data-layer design, performance and stability, payment / publishing backends</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Projects &amp; Experience</h2>
+  <article class="job">
+    <div class="job-head"><h3>Chengdu Thinkplay Technology Co., Ltd.<em>Partner / Technical Director (Core Developer)</em></h3><span class="date">Nov 2020 — Aug 2026</span></div>
+    <ul>
+      <li>Designed and maintained the game server framework and shared libraries, reused across SLG, card, and casual projects.</li>
+      <li>Worked on server-side development and iteration for <em class=\"t\">Dead Empire</em>, <em class=\"t\">Invasion</em>, <em class=\"t\">Kings Empire</em>, <em class=\"t\">Galaxy Legends</em>, and <em class=\"t\">Blox World</em>, with a focus on performance and stability for <em class=\"t\">Blox World</em> under high concurrent load.</li>
+      <li>Used NATS for communication between game server nodes.</li>
+      <li>Kept code review a habit, with attention to concurrency, consistency, rollback, and observability; adopted Cursor to assist design and coding and shorten iteration cycles.</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="job-head"><h3>Chengdu Moqikaka Technology Co., Ltd.<em>Technical Director (Framework &amp; Platform)</em></h3><span class="date">Apr 2013 — Sep 2020</span></div>
+    <p class="tech">Golang · C# · MySQL · Linux</p>
+    <ul>
+      <li>Designed the game server framework and base libraries from scratch and maintained them for reuse across multiple products.</li>
+      <li>Built the backends of the payment and publishing platforms from scratch, covering top-ups, reconciliation, and channel integration, supporting up to 10 live games.</li>
+      <li>Delivered the servers for <em class=\"t\">Da Zhuzai</em> (大主宰), <em class=\"t\">Xiaohua de Tieshen Gaoshou</em> (校花的贴身高手), and <em class=\"t\">She Diao</em> (射雕).</li>
+      <li>Took part in researching and selecting Golang, Git, Docker, ZooKeeper, Kafka, Redis, and Elasticsearch, helping move the web-game stack to distributed, high-concurrency online services.</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="job-head"><h3>Shenzhen Lichuang Shiji Technology Co., Ltd.<em>Technical Director (Server Dev)</em></h3><span class="date">Nov 2009 — Dec 2012</span></div>
+    <p class="tech">C# · SQL Server · Flash</p>
+    <ul>
+      <li>Built server logic and the data layer for web games including <em class=\"t\">Wangzhe Tianxia</em> (王者天下) and <em class=\"t\">Zhuzi Baijia</em> (诸子百家), with a team of about 20.</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="job-head"><h3>Microsoft Technology Center, Shenzhen<em>Software Engineer</em></h3><span class="date">Apr 2008 — Oct 2009</span></div>
+    <p class="tech">C# · ASP.NET</p>
+    <ul>
+      <li>Built enterprise C/S and B/S systems.</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="job-head"><h3>Beijing ChinaSoft International Information Technology Co., Ltd.<em>Software Engineer</em></h3><span class="date">Jan 2007 — Mar 2008</span></div>
+    <p class="tech">C#</p>
+    <ul>
+      <li>Built a carton-level coding and warehouse in/out system for the tobacco industry.</li>
+    </ul>
+  </article>
+</section>
+
+<section>
+  <h2>Engineering Practice</h2>
+  <dl class="skills">
+    <dt>Code Quality</dt><dd>Clear module boundaries and reuse, with framework capabilities layered apart from business logic; code review as a habit.</dd>
+    <dt>Backend Experience</dt><dd>Familiar with the common problems and trade-offs of game backends under high concurrency, caching, and message streams.</dd>
+    <dt>AI-Assisted Dev</dt><dd>Uses Cursor and ChatGPT for solution and code first drafts; concurrency, consistency, and rollback paths are always reviewed by people.</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Open Source &amp; Writing</h2>
+  <ul class="list">
+    <li><strong>goutil</strong>: Go utility library; <strong>stdx</strong>: supplementary types for the Go standard library; <strong>ChatServer / ChatServerCenter</strong>: a chat server pair.</li>
+    <li><strong>Blog "筑梦之队" (Dreambuild)</strong>: Kafka operations and partition reassignment, the Go concurrency model (G/P/M), null values and data validity, and more.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="edu"><div><span class="school">Northeast Electric Power University</span><span class="major">B.S. in Computer Science and Technology</span></div><span class="date">2003 — 2007</span></div>
+</section>
+</main>
+</body>
+</html>
